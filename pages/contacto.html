@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Leon Digital</title>
+    <meta name="description" content="Ponte en contacto con nosotros para consultas sobre marketing digital, diseño web y soluciones de IA. Estamos aquí para ayudarte.">
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="../index.html" class="logo">
+                    <img src="../images/logo.png" alt="Leon Digital" class="logo-image">
+                    <span class="logo-text">LEON DIGITAL</span>
+                </a>
+                
+                <!-- Navegación Desktop -->
+                <nav class="nav-desktop">
+                    <ul class="nav-menu">
+                        <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                        <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                        <li><a href="soluciones-ia.html" class="nav-link">Soluciones IA</a></li>
+                        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                        <li><a href="contacto.html" class="nav-link btn-primary active">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Botón Menú Móvil -->
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Navegación Móvil -->
+            <nav class="nav-mobile">
+                <div class="mobile-menu-header">
+                    <span class="logo-text">LEON DIGITAL</span>
+                    <button class="menu-close" aria-label="Cerrar menú">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <ul class="mobile-menu">
+                    <li><a href="../index.html" class="mobile-link">Inicio</a></li>
+                    <li><a href="servicios.html" class="mobile-link">Servicios</a></li>
+                    <li><a href="soluciones-ia.html" class="mobile-link">Soluciones IA</a></li>
+                    <li><a href="nosotros.html" class="mobile-link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="mobile-link btn-primary">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section-padding">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="heading-xl animate-fadeIn">Contacta con Nosotros</h1>
+                        <p class="text-lg animate-fadeIn delay-100">Estamos aquí para ayudarte. Cuéntanos sobre tu proyecto y descubre cómo podemos impulsar tu presencia digital.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container animate-fadeIn">
+                        <h2 class="heading-lg">Envíanos un Mensaje</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info animate-fadeIn delay-100">
+                        <h2 class="heading-lg">Información de Contacto</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Dirección</h3>
+                                    <p>Calle Principal 123<br>Ciudad, CP 12345</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Teléfono</h3>
+                                    <p>+34 123 456 789</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Email</h3>
+                                    <p>info@leondigital.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="social-section">
+                            <h3>Síguenos en Redes Sociales</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-info">
+                    <h3 class="footer-title">LEON DIGITAL</h3>
+                    <p class="footer-description">Soluciones de marketing digital y diseño web con enfoque en innovación y tecnologías de IA.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-menu">
+                        <li><a href="../index.html" class="footer-link">Inicio</a></li>
+                        <li><a href="servicios.html" class="footer-link">Servicios</a></li>
+                        <li><a href="soluciones-ia.html" class="footer-link">Soluciones IA</a></li>
+                        <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contacto</h3>
+                    <address class="footer-address">
+                        <p>Calle Principal 123</p>
+                        <p>Ciudad, CP 12345</p>
+                        <p>info@leondigital.com</p>
+                        <p>+34 123 456 789</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Leon Digital. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
