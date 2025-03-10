@@ -81,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 .heading-md {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
+    font-weight: 600;
 }
 
 .text-lg {
@@ -664,6 +665,36 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 2rem;
     text-align: center;
     color: var(--text-light);
+}
+
+/* About Section Styles */
+.about-list {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.about-list li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.about-quote {
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem 0 1rem 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+}
+
+.mt-4 {
+    margin-top: 2rem;
 }
 
 /* Media Queries */
