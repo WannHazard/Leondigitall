@@ -1,0 +1,247 @@
+/* sweden-experience.css - Estilos para la sección de experiencia internacional en Suecia */
+
+/* Estilos base para la sección */
+.sweden-experience {
+    position: relative;
+    padding: 6rem 0;
+    background-color: var(--bg-light);
+    overflow: hidden;
+}
+
+/* Efecto de fondo con gradiente nórdico */
+.sweden-experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 106, 167, 0.05) 0%, rgba(254, 204, 0, 0.05) 100%);
+    z-index: 1;
+}
+
+/* Contenedor principal con efecto parallax */
+.sweden-experience-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Encabezado de la sección */
+.sweden-experience-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sweden-experience-header h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+/* Subrayado decorativo con colores de la bandera sueca */
+.sweden-experience-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #006AA7 50%, #FECC00 50%);
+    border-radius: 2px;
+}
+
+/* Contenedor de clientes */
+.clients-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta de cliente individual */
+.client-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.client-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Imagen del cliente */
+.client-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.client-image img {
+    max-width: 100%;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform var(--transition-slow);
+}
+
+.client-card:hover .client-image img {
+    transform: scale(1.05);
+}
+
+/* Superposición con bandera sueca */
+.sweden-flag-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 20px;
+    background: linear-gradient(to bottom, #006AA7 0%, #006AA7 40%, #FECC00 40%, #FECC00 60%, #006AA7 60%, #006AA7 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Contenido de la tarjeta */
+.client-content {
+    padding: 1.5rem;
+}
+
+.client-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.client-industry {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.client-industry i {
+    color: var(--primary);
+}
+
+.client-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* Testimonios */
+.client-testimonial {
+    position: relative;
+    font-style: italic;
+    padding: 1rem 1.5rem;
+    background-color: var(--bg-gray);
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.client-testimonial::before {
+    content: '\201C';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 2rem;
+    color: var(--primary-light);
+    font-family: serif;
+    line-height: 1;
+}
+
+/* Sección de estadísticas */
+.sweden-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Animaciones específicas */
+@keyframes flagWave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+.sweden-flag-overlay {
+    animation: flagWave 3s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .sweden-experience-content {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .sweden-experience-text {
+        flex: 1;
+        padding-right: 2rem;
+    }
+    
+    .sweden-experience-image {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .sweden-experience {
+        padding: 4rem 0;
+    }
+    
+    .clients-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sweden-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

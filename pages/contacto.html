@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/contact.css">
     
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -82,76 +83,105 @@
         <!-- Contact Section -->
         <section class="contact-section section-padding">
             <div class="container">
-                <div class="contact-grid">
+                <div class="section-header text-center">
+                    <h2 class="heading-lg">Contacta con Nosotros</h2>
+                    <p class="text-lg">Estamos aquí para responder tus preguntas y ayudarte con tu proyecto</p>
+                </div>
+                
+                <div class="contact-container">
                     <!-- Contact Form -->
-                    <div class="contact-form-container animate-fadeIn">
-                        <h2 class="heading-lg">Envíanos un Mensaje</h2>
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Nombre</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Teléfono</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Asunto</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary">Enviar Mensaje</button>
-                        </form>
+                    <div class="contact-form-wrapper animate-fadeIn">
+                        <div class="contact-card">
+                            <header class="card-header">
+                                <h3 class="heading-md">Envíanos un Mensaje</h3>
+                                <p>Completa el formulario y te responderemos a la brevedad</p>
+                            </header>
+                            <form class="form-container" id="contactForm" role="form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">Nombre</label>
+                                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="Tu email" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">Teléfono</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="Tu teléfono">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subject">Asunto</label>
+                                        <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Mensaje</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+                                </div>
+                                <button type="submit" class="btn-primary btn-full">Enviar Mensaje</button>
+                            </form>
+                        </div>
                     </div>
 
                     <!-- Contact Info -->
-                    <div class="contact-info animate-fadeIn delay-100">
-                        <h2 class="heading-lg">Información de Contacto</h2>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-info-wrapper animate-fadeIn delay-100">
+                        <div class="contact-card">
+                            <header class="card-header">
+                                <h3 class="heading-md">Información de Contacto</h3>
+                                <p>Utiliza estos datos para contactarnos directamente</p>
+                            </header>
+                            
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Dirección</h4>
+                                        <p>Calle Principal 123<br>Ciudad, CP 12345</p>
+                                    </div>
                                 </div>
-                                <div class="contact-text">
-                                    <h3>Dirección</h3>
-                                    <p>Calle Principal 123<br>Ciudad, CP 12345</p>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Teléfono</h4>
+                                        <p>+34 123 456 789</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Email</h4>
+                                        <p>info@leondigital.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Horario</h4>
+                                        <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h3>Teléfono</h3>
-                                    <p>+34 123 456 789</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h3>Email</h3>
-                                    <p>info@leondigital.com</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Social Links -->
-                        <div class="social-section">
-                            <h3>Síguenos en Redes Sociales</h3>
-                            <div class="social-links">
-                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- Social Links -->
+                            <div class="social-section">
+                                <h4>Síguenos en Redes Sociales</h4>
+                                <div class="social-links">
+                                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -200,7 +230,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Leon Digital. Todos los derechos reservados.</p>
+                <p class="copyright">&copy; <span id="current-year"></span> Leon Digital. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
