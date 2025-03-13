@@ -1,0 +1,514 @@
+/* chatbot.css - Estilos para el chatbot de Leon Digital */
+
+/* Contenedor principal del chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Botón para abrir/cerrar el chatbot */
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--accent), var(--accent-hover));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.chatbot-toggle:hover {
+    background: linear-gradient(145deg, var(--accent-hover), var(--accent));
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.chatbot-toggle img {
+    width: 45px;
+    height: 45px;
+    transition: transform var(--transition-base);
+    object-fit: contain;
+}
+
+.chatbot-toggle:hover img {
+    transform: rotate(10deg);
+}
+
+/* Ventana del chatbot - Diseño mejorado */
+.chatbot-window {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 350px;
+    height: 450px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Cabecera del chatbot - Estilo moderno */
+.chatbot-header {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: white;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: none;
+}
+
+/* Título del chatbot */
+.chatbot-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chatbot-title img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.chatbot-title h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Mejora de los mensajes */
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    animation: fadeInUp 0.3s ease forwards;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.message-bot {
+    align-self: flex-start;
+    background-color: #f0f2f5;
+    color: #333;
+    border-bottom-left-radius: 5px;
+}
+
+.message-user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+/* Área de entrada de texto - Más moderna */
+.chatbot-input {
+    padding: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 10px;
+    background-color: #f9f9f9;
+}
+
+.chatbot-input input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    outline: none;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.chatbot-input input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.chatbot-send {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(139, 92, 246, 0.2);
+}
+
+.chatbot-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Indicador de escritura mejorado */
+.typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 12px 16px;
+    background-color: #f0f2f5;
+    border-radius: 18px;
+    align-self: flex-start;
+    margin-top: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Mejora de los indicadores de estado */
+.message::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.message.sent::after {
+    background: #aaaaaa;
+}
+
+.message.delivered::after {
+    background: var(--accent);
+}
+
+.message.read::after {
+    background: #4CAF50;
+}
+
+/* Mejora de las marcas de tiempo */
+.message-timestamp {
+    font-size: 0.65rem;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 6px;
+    text-align: right;
+}
+
+.message-user .message-timestamp {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.message-bot .message-timestamp {
+    text-align: left;
+}
+
+/* Animación para el botón del chatbot */
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--secondary), var(--secondary-dark));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.chatbot-toggle:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-window.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+/* Cabecera del chatbot */
+.chatbot-header {
+    background-color: var(--secondary);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--secondary-light);
+}
+
+.chatbot-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chatbot-title img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(1.2) contrast(1.2);
+    background-color: white;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+.chatbot-title h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+.chatbot-close {
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform var(--transition-fast);
+}
+
+.chatbot-close:hover {
+    transform: scale(1.1);
+}
+
+/* Área de mensajes */
+.chatbot-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Fix the message status indicators - color values are incorrect */
+.message::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.message.sent::after {
+    background: #999; /* Changed from #gray which is invalid */
+}
+
+.message.delivered::after {
+    background: #0088ff; /* Changed from #blue which is invalid */
+}
+
+.message.read::after {
+    background: #28a745; /* Changed from #green which is invalid */
+}
+
+.message-bot {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-bottom-left-radius: 5px;
+}
+
+.message-user {
+    align-self: flex-end;
+    background-color: var(--secondary-light);
+    color: var(--text-primary);
+    border-bottom-right-radius: 5px;
+}
+
+/* Área de entrada de texto */
+.chatbot-input {
+    padding: 15px;
+    border-top: 1px solid var(--bg-gray);
+    display: flex;
+    gap: 10px;
+}
+
+.chatbot-input input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--bg-gray);
+    border-radius: 20px;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.chatbot-input input:focus {
+    border-color: var(--secondary-light);
+}
+
+.chatbot-send {
+    background-color: var(--secondary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.chatbot-send:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* Animaciones específicas del chatbot */
+@keyframes botTyping {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 10px 15px;
+    background-color: var(--bg-gray);
+    border-radius: 18px;
+    align-self: flex-start;
+    margin-top: 5px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-light);
+    border-radius: 50%;
+}
+
+.typing-dot:nth-child(1) {
+    animation: botTyping 1s infinite 0s;
+}
+
+.typing-dot:nth-child(2) {
+    animation: botTyping 1s infinite 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation: botTyping 1s infinite 0.4s;
+}
+
+/* Animación de entrada del chatbot */
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.95); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-bounceIn {
+    animation: bounceIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animación para el robot */
+@keyframes robotFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.robot-float {
+    animation: robotFloat 3s ease-in-out infinite;
+    filter: brightness(1.2) contrast(1.2);
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+/* Animación para mensajes nuevos */
+@keyframes messageIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-new {
+    animation: messageIn 0.3s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .chatbot-window {
+        width: 300px;
+        height: 400px;
+        bottom: 70px;
+    }
+}
+
+
+/* Add message status indicators */
+.message::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.message.sent::after {
+    background: #999;
+}
+
+.message.delivered::after {
+    background: #0088ff;
+}
+
+.message.read::after {
+    background: #28a745;
+}
+
+/* Add typing animation enhancement */
+.typing-indicator .dot {
+    animation: typingBounce 1.4s infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes typingBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Add position: relative to message for proper status indicator positioning */
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    animation: fadeInUp 0.3s ease forwards;
+    position: relative; /* Added this */
+}
+
+/* Message timestamp styling */
+.message-timestamp {
+    font-size: 0.7rem;
+    color: #999;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.message-bot .message-timestamp {
+    text-align: left;
+}
+
+.message-content {
+    margin-bottom: 2px;
+}

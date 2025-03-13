@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     background-color: var(--bg-card);
     z-index: 100;
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 .nav-mobile.active {
@@ -224,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-menu {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .mobile-link {
@@ -232,6 +232,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     color: var(--text-primary);
     transition: color var(--transition-fast);
+    padding: 0.5rem 0;
 }
 
 .mobile-link:hover {
